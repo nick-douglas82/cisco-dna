@@ -1,0 +1,50 @@
+.list {
+  display: flex;
+
+  &.list--vertical {
+    margin-top: 4.875rem;
+    flex-direction: column;
+
+    .list__item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3.3125rem;
+      opacity: 0;
+
+      &.animate__bounceInRight {
+        opacity: 1;
+      }
+
+      img {
+        margin-right: 40px;
+        border-radius: 50%;
+      }
+
+      h4 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &.list--horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 3.75rem;
+
+    .list__item {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.875rem;
+
+      .h2 {
+        margin: 0;
+        margin-left: 1.5625rem;
+      }
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}

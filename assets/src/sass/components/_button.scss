@@ -1,0 +1,35 @@
+.button {
+  display: inline-block;
+  padding: 1.125rem 1.5rem 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  position: relative;
+
+  &--large {
+    font-size: 1.5rem;
+  }
+
+  &--light-blue {
+    background-color: var(--light-blue);
+    color: var(--white);
+    transition: background-color ease-in-out 200ms;
+
+    &:hover {
+      background-color: var(--orange);
+      transition: background-color ease-in-out 200ms;
+    }
+  }
+
+  &--orange {
+    background-color: var(--orange);
+    color: var(--white);
+    transition: all ease-in-out 200ms;
+
+    &:hover {
+      background-color: var(--dark-blue);
+      color: var(--orange);
+      transition: all ease-in-out 200ms;
+    }
+  }
+}

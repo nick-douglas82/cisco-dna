@@ -1,0 +1,70 @@
+@import url(~sanitize.css);
+@import url(~animate.css);
+@import 'colors';
+
+@import 'mixins/font-face';
+
+@import 'base';
+@import 'fonts';
+@import 'container';
+@import 'typography';
+@import 'utils/utils';
+
+
+@import 'components/page-nav';
+@import 'components/button';
+@import 'components/header';
+@import 'components/section';
+@import 'components/circle';
+@import 'components/list';
+@import 'components/footer';
+
+.animated-dash {
+  background: none, none, linear-gradient(0deg, var(--dark-blue) 60%, transparent 60%), none;
+  background-repeat: repeat-y;
+  background-size: 0, 0, 4px 27px, 0;
+  background-position: -200px;
+  animation: border-dance 30s infinite linear;
+}
+
+@keyframes border-dance {
+  0% {
+    background-position: 0px 0px, 0 0, 0px -100%, 0 0px;
+  }
+  100% {
+    background-position: 0 0px, 0px 0, 0px 0px, 0 0;
+  }
+}
+main {
+  @extend .animated-dash;
+}
+
+section {
+  opacity: 0;
+}
+
+section,
+header {
+  padding-left: 70px;
+  position: relative;
+
+  &:after {
+    content: '';
+    height: 100%;
+    width: 10px;
+    background: linear-gradient(to bottom, rgba(30,87,153,0) 0%, var(--light-blue) 100%);
+    display: block;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+  }
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}

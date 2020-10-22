@@ -1,0 +1,21 @@
+header {
+  padding-bottom: 3.5rem;
+  margin-top: 4.375rem;
+  display: flex;
+  justify-content: space-between;
+
+  .column {
+    width: 100%;
+    max-width: 500px;
+
+    &:nth-last-child(1) {
+      width: 100%;
+      max-width: 330px;
+      text-align: right;
+    }
+  }
+
+  img {
+    margin-bottom: 38px;
+  }
+}

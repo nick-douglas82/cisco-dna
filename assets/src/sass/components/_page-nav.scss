@@ -1,0 +1,41 @@
+.page-nav {
+  max-width: 660px;
+  width: 100%;
+  margin: 0 auto;
+
+  ul {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+
+    li {
+
+      &:not(:first-of-type),
+      &:not(:last-of-type) {
+        padding: 0 20px;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      padding: 0 5px;
+      white-space: nowrap;
+
+      &.button {
+        padding: 0.625rem 0.875rem 0.5625rem;
+      }
+
+      &:hover,
+      .is-active {
+        padding-bottom: 5px;
+        border-bottom: 3px solid var(--light-blue);
+
+        &.button {
+          padding-bottom: 0.5625rem;
+          border: 0;
+        }
+      }
+    }
+  }
+}

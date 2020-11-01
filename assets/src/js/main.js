@@ -1,4 +1,4 @@
-import $ from 'jQuery';
+import $ from 'jquery';
 
 $(function() {
   $( ".page-nav a" ).on( "click", function(e) {

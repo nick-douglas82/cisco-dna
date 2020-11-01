@@ -24,7 +24,7 @@
   background-repeat: repeat-y;
   background-size: 0, 0, 4px 27px, 0;
   background-position: -200px;
-  animation: border-dance 30s infinite linear;
+  animation: border-dance 20s infinite steps(2000);
 }
 
 @keyframes border-dance {

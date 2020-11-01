@@ -31,11 +31,48 @@
     flex-wrap: wrap;
     margin-top: 3.75rem;
 
+    .text__content {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding-left: 110px;
+      padding-right: 30px;
+      transition: all ease-in 250ms;
+
+      &.is-active {
+        opacity: 1;
+        visibility: visible;
+        transition: all ease-in 250ms;
+      }
+    }
+
+    .item__text {
+      transition: all ease-in 250ms;
+
+      &.is-active {
+        opacity: 1;
+        visibility: visible;
+        transition: all ease-in 250ms;
+      }
+    }
+
+    .text__title {
+      &.is-active {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
     .list__item {
       width: 50%;
       display: flex;
       align-items: center;
       margin-bottom: 2.875rem;
+      position: relative;
 
       .h2 {
         margin: 0;

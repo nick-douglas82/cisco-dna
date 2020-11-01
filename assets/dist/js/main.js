@@ -139,6 +139,12 @@ for (var _i = listItems.length - 1; _i >= 0; _i--) {
   });
 }
 
+jQuery__WEBPACK_IMPORTED_MODULE_0___default()('.list--horizontal .list__item').mouseenter(function () {
+  jQuery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('.item__text').addClass('is-active');
+});
+jQuery__WEBPACK_IMPORTED_MODULE_0___default()('.list--horizontal .list__item').mouseleave(function () {
+  jQuery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('.item__text').removeClass('is-active');
+});
 particlesJS('particles-js', {
   "particles": {
     "number": {

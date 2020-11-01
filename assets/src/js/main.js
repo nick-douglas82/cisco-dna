@@ -42,6 +42,13 @@ for (let i = listItems.length - 1; i >= 0; i--) {
   });
 }
 
+$('.list--horizontal .list__item').mouseenter(function() {
+  $(this).find('.item__text').addClass('is-active');
+});
+$('.list--horizontal .list__item').mouseleave(function() {
+  $(this).find('.item__text').removeClass('is-active');
+});
+
 particlesJS('particles-js',
   {
     "particles": {

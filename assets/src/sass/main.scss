@@ -1,5 +1,15 @@
 @import url(~sanitize.css);
 @import url(~animate.css);
+
+$mq-breakpoints: (
+    mobile:  320px,
+    tablet:  740px,
+    desktop: 980px,
+    wide:    1300px,
+);
+
+@import 'sass-mq';
+
 @import 'colors';
 
 @import 'mixins/font-face';
@@ -48,6 +58,10 @@ header {
   padding-left: 70px;
   position: relative;
 
+  @include mq($until: tablet) {
+    padding-left: 0;
+  }
+
   &:after {
     content: '';
     height: 100%;
@@ -68,3 +82,5 @@ header {
   right: 0;
   z-index: -1;
 }
+
+

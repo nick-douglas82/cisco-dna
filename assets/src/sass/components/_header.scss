@@ -3,10 +3,18 @@ header {
   margin-top: 4.375rem;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+  }
 
   .column {
     width: 100%;
-    max-width: 500px;
+
+    @include mq($until: tablet) {
+      max-width: 500px;
+    }
 
     &:nth-last-child(1) {
       width: 100%;

@@ -2,6 +2,66 @@ section {
   padding-bottom: 3.5rem;
   margin-top: 3.125rem;
 
+  .image-swap__content {
+    margin-left: 160px;
+    margin-top: 50px;
+    height: 100px;
+    position: relative;
+
+    .hovered,
+    .initial {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: all ease-in 250ms;
+
+      &.hovered {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    &.is-active {
+      .hovered {
+        opacity: 1;
+        visibility: visible;
+        transition: all ease-in 250ms;
+      }
+
+      .initial {
+        opacity: 0;
+        visibility: hidden;
+        transition: all ease-in 250ms;
+      }
+    }
+  }
+
+  .title {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  &:nth-of-type(2) {
+    .section__image {
+      &:after {
+        content: '';
+        width: 100%;
+        background-color: #1A4471;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 80px;
+        border-radius: 50px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all ease-in 350ms;
+      }
+    }
+  }
+
   .section {
     &__image {
       position: relative;
@@ -11,6 +71,11 @@ section {
       width: 100%;
       height: 100%;
       transition: all 500ms ease-in;
+      transition-delay: 0s !important;
+
+      &.image__swap {
+        margin-top: 1.5rem;
+      }
 
       &.single-image {
         max-height: 500px;
@@ -18,14 +83,24 @@ section {
 
 
       &:hover {
+        transition-delay: 0s !important;
+
+        &:after {
+          opacity: 1;
+          visibility: visible;
+          transition: all ease-in 350ms;
+        }
+
         .diagram_1 {
           opacity: 0;
           visibility: hidden;
+          transition-delay: 0s !important;
         }
 
         .diagram_2 {
           opacity: 1;
           visibility: visible;
+          transition-delay: 0s !important;
         }
       }
 
@@ -57,4 +132,23 @@ section {
     }
   }
 
+  object {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.set-image {
+    object {
+      opacity: 1;
+      visibility: visible;
+      transition: all ease-in 500ms;
+      transition-delay: 1.3s;
+    }
+  }
+
+  &.unset-image {
+    object {
+      transition-delay: 0s !important;
+    }
+  }
 }

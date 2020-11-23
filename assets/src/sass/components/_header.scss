@@ -11,15 +11,18 @@ header {
 
   .column {
     width: 100%;
+    padding-right: 60px;
 
     @include mq($until: tablet) {
       max-width: 500px;
+      padding-right: 0;
     }
 
     &:nth-last-child(1) {
       width: 100%;
       max-width: 330px;
-      text-align: right;
+      text-align: center;
+      padding-right: 0;
     }
   }
 

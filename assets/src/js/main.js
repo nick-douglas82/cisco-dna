@@ -25,7 +25,11 @@ for (let i = waypoints.length - 1; i >= 0; i--) {
   const waypoint2 = new Waypoint({
     element: waypoints[i],
     handler: function(direction) {
-      this.element.classList.add('animate__fadeInUp');
+      const el = this.element;
+      el.classList.add('animate__fadeInUp', 'set-image');
+      setTimeout(function() {
+        el.classList.add('unset-image');
+      }, 1500);
     },
     offset: '65%'
   });
@@ -45,8 +49,17 @@ for (let i = listItems.length - 1; i >= 0; i--) {
 $('.list--horizontal .list__item').mouseenter(function() {
   $(this).find('.item__text').addClass('is-active');
 });
+
 $('.list--horizontal .list__item').mouseleave(function() {
   $(this).find('.item__text').removeClass('is-active');
+});
+
+$('.image__swap').mouseenter(function() {
+  $(this).prev().addClass('is-active')
+});
+
+$('.image__swap').mouseleave(function() {
+  $(this).prev().removeClass('is-active')
 });
 
 particlesJS('particles-js',

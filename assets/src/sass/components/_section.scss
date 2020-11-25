@@ -1,12 +1,33 @@
 section {
-  padding-bottom: 3.5rem;
-  margin-top: 3.125rem;
+  margin-bottom: 3.5rem;
+  // padding-top: 3.125rem;
+
+  @include mq($until: tablet) {
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .diagram__content {
+
+    &:nth-of-type(2) {
+      margin-top: 1.875rem;
+    }
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
 
   .image-swap__content {
     margin-left: 160px;
     margin-top: 50px;
     height: 100px;
     position: relative;
+
+    @include mq($until: tablet) {
+      margin-left: 0;
+      display: none;
+    }
 
     .hovered,
     .initial {
@@ -73,14 +94,26 @@ section {
       transition: all 500ms ease-in;
       transition-delay: 0s !important;
 
+      @include mq($until: tablet) {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
       &.image__swap {
         margin-top: 1.5rem;
       }
 
       &.single-image {
         max-height: 500px;
-      }
+        margin-bottom: 0;
+        margin-top: 0;
 
+        @include mq($until: tablet) {
+          max-height: 100%;
+          margin-top: 1.25rem;
+          margin-bottom: 1.25rem;
+        }
+      }
 
       &:hover {
         transition-delay: 0s !important;
@@ -92,41 +125,55 @@ section {
         }
 
         .diagram_1 {
-          opacity: 0;
-          visibility: hidden;
-          transition-delay: 0s !important;
+          @include mq($from: tablet) {
+            opacity: 0;
+            visibility: hidden;
+            transition-delay: 0s !important;
+          }
         }
 
         .diagram_2 {
-          opacity: 1;
-          visibility: visible;
-          transition-delay: 0s !important;
+          @include mq($from: tablet) {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s !important;
+          }
         }
       }
 
       &:before {
-        content: '';
-        padding-top: 100%;
-        display: block;
+
+        @include mq($from: tablet) {
+          content: '';
+          padding-top: 100%;
+          display: block;
+        }
       }
 
       object {
         cursor: pointer;
-        position: absolute;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
         transition: all 500ms ease-in;
 
+        @include mq($from: tablet) {
+          position: absolute;
+        }
+
         &.diagram_1 {
-          z-index: 10;
+          @include mq($from: tablet) {
+            z-index: 10;
+          }
         }
 
         &.diagram_2 {
-          z-index: 10;
-          visibility: hidden;
-          opacity: 0;
+          @include mq($from: tablet) {
+            z-index: 10;
+            visibility: hidden;
+            opacity: 0;
+          }
         }
       }
     }

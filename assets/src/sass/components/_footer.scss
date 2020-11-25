@@ -6,15 +6,23 @@ footer {
   display: flex;
   padding: 45px 0;
   margin-top: 60px;
+  padding-bottom: 60px;
 
   .container {
     display: flex;
     justify-content: space-between;
+
+    @include mq($until: tablet) {
+      flex-direction: column;
+    }
   }
 
   nav {
     width: 100%;
-    max-width: 200px;
+
+    @include mq($from: tablet) {
+      max-width: 200px;
+    }
 
     a {
       &:hover {
@@ -31,6 +39,10 @@ footer {
     width: 100%;
     max-width: 500px;
 
+    @include mq($until: tablet) {
+      margin-top: 20px;
+    }
+
     p {
       margin: 0;
     }
@@ -44,6 +56,16 @@ footer {
     ul {
       display: flex;
       justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    nav {
+      @include mq($until: tablet) {
+        max-width: 200px;
+      }
+    }
+
+    @include mq($until: tablet) {
       margin-top: 20px;
     }
   }

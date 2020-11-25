@@ -62,6 +62,13 @@ $('.image__swap').mouseleave(function() {
   $(this).prev().removeClass('is-active')
 });
 
+$('.js-hamburger').on('click', function() {
+  $(this).toggleClass('is-active');
+  $('body').toggleClass('nav-active');
+  $('.page-nav').addClass('active-nav');
+  setTimeout(() => $('.page-nav').removeClass('active-nav'), 500);
+})
+
 particlesJS('particles-js',
   {
     "particles": {

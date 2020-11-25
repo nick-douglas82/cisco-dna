@@ -1,12 +1,18 @@
 header {
   padding-bottom: 3.5rem;
-  margin-top: 4.375rem;
+  margin-top: 2.5rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 
+  // @include mq($until: tablet) {
+  //   padding: 0 1.25rem 56px 1.625rem;
+  // }
+
   @include mq($from: tablet) {
+    padding-bottom: 3.5rem;
     flex-direction: row;
+    margin-top: 4.375rem;
   }
 
   .column {

@@ -9,11 +9,23 @@
     href="./assets/dist/css/main.css"
   />
 </head>
-<body>
+<body id="home">
   <div id="particles-js"></div>
-  <nav class="page-nav">
+  <nav class="page-nav" role="navigation">
+    <div class="hamburger js-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <ul class="reset-list">
-      <li><a href="#">Home</a></li>
+      <li>
+        <div class="hamburger hamburger-close js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#IOT">What is IoT?</a></li>
       <li><a href="#important">Why is it important?</a></li>
       <li><a href="#use-cases">Use cases</a></li>
@@ -70,7 +82,15 @@
           </div>
         </div>
         <div class="section__image image__swap">
+          <div class="diagram__content">
+            <h4>Typical Scenario: Assets in silos</h4>
+            <div>Differing networks and vendors with propietary devices and applications lead to a lack of communcation between the devices in an Enterprise. Limiting the consolidated power of those devices.</div>
+          </div>
           <object type="image/svg+xml" data="./assets/dist/images/diagrams/diagram_2.svg" class="diagram_1"></object>
+          <div class="diagram__content">
+            <h4>The new scenario: Everything flows through DNA Spaces</h4>
+            <div>Silos are removed and information flows freely creating a single ecosystem. The Enterprise can then scale innovation, deploy applications rapidly at scale, and operate at a much lower Total Cost of Ownership (TCO).</div>
+          </div>
           <object type="image/svg+xml" data="./assets/dist/images/diagrams/diagram_3_new.svg" class="diagram_2"></object>
         </div>
       </section>

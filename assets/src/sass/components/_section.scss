@@ -7,6 +7,12 @@ section {
     padding-top: 20px;
   }
 
+  &.final-section {
+    @include mq($until: tablet) {
+      display: none;
+    }
+  }
+
   .diagram__content {
 
     &:nth-of-type(2) {
@@ -100,7 +106,7 @@ section {
       }
 
       &.image__swap {
-        margin-top: 1.5rem;
+        margin-top: 2rem;
       }
 
       &.single-image {

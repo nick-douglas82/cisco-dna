@@ -1,7 +1,14 @@
 .page-nav {
-  max-width: 660px;
   width: 100%;
   margin: 0 auto;
+  transition: background ease-in 250ms;
+
+  @include mq($from: tablet) {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    padding: 10px 0;
+  }
 
   &.active-nav {
     ul {
@@ -9,29 +16,45 @@
     }
   }
 
+  &.sticky {
+    @include mq($from: tablet) {
+      background-color: var(--dark-blue);
+      max-width: 100%;
+      transition: background ease-in 250ms;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
 
   ul {
     color: var(--white);
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 0;
 
     @include mq($until: tablet) {
-      position: fixed;
-      left: 0;
+      align-items: flex-start;
+      background-color: var(--white);
+      bottom: 0;
+      box-shadow: 10px 0px 24px -12px rgba(0,0,0,0.75);
+      color: var(--dark-blue);
       display: flex;
       flex-direction: column;
-      background-color: var(--white);
-      color: var(--dark-blue);
-      z-index: 1000;
-      top: 0;
+      justify-content: flex-start;
       left: 0;
-      right: 30%;
-      bottom: 0;
-      align-items: flex-start;
-      transform: translateX(-110%);
-      transform-origin: 0% 0%;
+      left: 0;
       margin: 0;
-      box-shadow: 10px 0px 24px -12px rgba(0,0,0,0.75);
+      position: fixed;
+      right: 30%;
+      top: 0;
+      transform-origin: 0% 0%;
+      transform: translateX(-110%);
+      z-index: 1000;
 
       .nav-active & {
         transform: none;

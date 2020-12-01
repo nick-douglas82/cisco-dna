@@ -6,6 +6,10 @@
   font-weight: 700;
   position: relative;
 
+  @include mq($until: tablet) {
+    display: none;
+  }
+
   &--large {
     font-size: 1.5rem;
   }
@@ -30,6 +34,20 @@
       background-color: var(--dark-blue);
       color: var(--orange);
       transition: all ease-in-out 200ms;
+    }
+  }
+
+  &-fixed {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    text-align: center;
+
+    @include mq($from: tablet) {
+      display: none;
     }
   }
 }

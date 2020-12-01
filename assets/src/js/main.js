@@ -7,8 +7,25 @@ $(function() {
         scrollTop: $($(this).attr("href")).offset().top + -100
       }, 500);
   });
-});
 
+  const stickyNavTop = $('.page-nav').offset().top;
+
+  const stickyNav = function() {
+    const scrollTop = $(window).scrollTop();
+
+    if (scrollTop > stickyNavTop + 50) {
+      $('.page-nav').addClass('sticky');
+    } else {
+      $('.page-nav').removeClass('sticky');
+    }
+  };
+
+  stickyNav();
+
+  $(window).scroll(function() {
+    stickyNav();
+  });
+});
 
 const waypoints = document.querySelectorAll('.section');
 for (let i = waypoints.length - 1; i >= 0; i--) {

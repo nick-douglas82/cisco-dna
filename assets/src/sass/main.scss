@@ -90,4 +90,55 @@ header {
   z-index: -1;
 }
 
+// Ice Blue Sky Updates
+.table__dates {
+  .table__date {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
 
+    @include mq($from: tablet) {
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .event,
+    .location,
+    .action {
+      flex-grow: 1;
+      flex-shrink: 0;
+      margin-bottom: 10px;
+
+      @include mq($from: tablet) {
+        margin-bottom: 0;
+      }
+    }
+
+    .location {
+      flex-basis: 15%;
+      font-weight: 800;
+
+      @include mq($from: tablet) {
+        font-weight: 300;
+      }
+    }
+
+    .event {
+      flex-basis: 65%
+    }
+
+    .action {
+      .button {
+        text-align: center;
+        width: auto;
+        display: inline-block;
+
+        @include mq($from: tablet) {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}

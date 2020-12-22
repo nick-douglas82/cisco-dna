@@ -7,12 +7,6 @@ section {
     padding-top: 20px;
   }
 
-  &.final-section {
-    @include mq($until: tablet) {
-      display: none;
-    }
-  }
-
   .diagram__content {
 
     &:nth-of-type(2) {
@@ -73,18 +67,20 @@ section {
   &:nth-of-type(2) {
     .section__image {
       &:after {
-        content: '';
-        width: 100%;
-        background-color: #1A4471;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 80px;
-        border-radius: 50px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all ease-in 350ms;
+        @include mq($from: tablet) {
+          content: '';
+          width: 100%;
+          background-color: #1A4471;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 80px;
+          border-radius: 50px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all ease-in 350ms;
+        }
       }
     }
   }
